@@ -23,7 +23,9 @@
  * Functions
  *===============================================================================*/
 
-function validate() {
+ import {txtId,txtName,txtAddress,customers} from './customer-ctrl.js';
+
+ export function validate() {
     /* Object Literal {}, Array Literal [], RegExp Literal /expression/ */
     /* new Object(), new Array(), new RegExp() */
 
