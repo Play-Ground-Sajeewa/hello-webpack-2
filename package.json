@@ -2,13 +2,16 @@
   "name": "font-end-skills-test-1",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack "
+    "build": "webpack serve"
+
+
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "bootstrap": "^4.5.3"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
     "mini-css-extract-plugin": "^1.3.3",
     "sass": "^1.30.0",
