@@ -100,6 +100,7 @@ function handleClickEventDelegation(event) {
 }
 
 function handleSave(event) {
+   
     if (!validate()) {
         return;
     }
