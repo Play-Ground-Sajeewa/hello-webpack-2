@@ -26,8 +26,7 @@ module.exports={
     },
     plugins: [new MiniCssExtractPlugin({
         filename: 'main.min.css'
-    }), 
-        new CleanWebpackPlugin()
+    })
     ],
     devServer: {
         publicPath: '/dist/',
