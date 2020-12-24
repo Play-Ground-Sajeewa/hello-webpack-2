@@ -1,38 +1,27 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { LibManifestPlugin } = require("webpack");
+const {default: merge} = require("webpack-merge");
+const superConfig=require("./webpack.config");
 
-module.exports={
+module.exports=merge(superConfig,{
 
-    entry: './index.js',
     output:{
-        filename: 'main.bundle.js',
-        path: __dirname +'/dist',
-        publicPath:'',
-        assetModuleFilename:'asset/[hash][ext][query]',
-    },
-    mode: 'development',
-    module:{
-        rules: [
-            {
-             test: /[.]scss$/,
-             use : [MiniCssExtractPlugin.loader,'css-loader','sass-loader']
-            },
-            {
-                test: /\.(png|jpeg|jpg|gif|svg|woff|woff2|eot|ttf|otf)$/,
-                type: 'asset/resource'
-              }
-        ]
+        filename: 'main.[contenthash].bundle.js'
 
     },
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'main.min.css'
-    }), 
-        new CleanWebpackPlugin()
+    plugins:[
+        new MiniCssExtractPlugin({
+            filename: 'main.[contenthash].min.css'
+        }), 
     ],
-    devServer: {
-        publicPath: '/dist/',
-        watchContentBase: true
-    }
+
+    
+    mode: 'production',
+   
+       
+    
  
 
-}
+})
